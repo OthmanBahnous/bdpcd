@@ -1,0 +1,47 @@
+{% extends 'inv/base.html' %}
+
+{% block body %}
+
+  <div class="add_buttons">
+    <div class="button-group">
+      <a href="{% url 'display_operation' %}" class="btn btn-primary btn-md btn-trim" role="button"> Operations </a>
+      <a href="{% url 'add_operation' %}" class="btn btn-success btn-sm btn-pad" role="button">+</a>
+      <a href="{% url 'display_mouvement' %}" class="btn btn-primary btn-md btn-trim" role="button"> Mouvements</a>
+      <a href="{% url 'display_mouvement' %}" class="btn btn-success btn-sm btn-pad" role="button">+</a>
+    </div>
+  </div>
+
+  <div>
+      <h4>Liste Des {{ header }}</h4>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+            <th>nop</th>
+            <th>datm</th>
+            <th>ndm</th>
+            <th>typem</th>
+            <th>mini</th>
+            <th>mfin</th>
+            <th>numfixe</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in items %}
+      <tr>
+            <td>{{item.nop}}</td>
+            <td>{{item.datm}}</td>
+            <td>{{item.ndm}}</td>
+            <td>{{item.typem}}</td>
+            <td>{{item.mini}}</td>
+            <td>{{item.mfin}}</td>
+            <td>{{item.numfixe}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

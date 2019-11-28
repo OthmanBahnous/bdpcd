@@ -1,0 +1,82 @@
+{% extends 'inv/base.html' %}
+
+{% block body %}
+
+  <div class="add_buttons">
+    <div class="button-group">
+      <a href="{% url 'display_operation' %}" class="btn btn-primary btn-md btn-trim" role="button"> Operations </a>
+      <a href="{% url 'add_operation' %}" class="btn btn-success btn-sm btn-pad" role="button">+</a>
+      <a href="{% url 'display_mouvement' %}" class="btn btn-primary btn-md btn-trim" role="button"> Mouvements</a>
+      <a href="{% url 'display_mouvement' %}" class="btn btn-success btn-sm btn-pad" role="button">+</a>
+    </div>
+  </div>
+
+  <div>
+      <h4>Liste Des {{ header }}</h4>
+  </div>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+            <th>nop</th>
+            <th>libelle</th>
+            <th>chap</th>
+            <th>gest</th>
+            <th>anins</th>
+            <th>decap</th>
+            <th>ndins</th>
+            <th>apinit</th>
+            <th>apact</th>
+            <th>sitop</th>
+            <th>datelanc</th>
+            <th>consant</th>
+            <th>consenc</th>
+            <th>pop</th>
+            <th>emplp</th>
+            <th>emplt</th>
+            <th>physique</th>
+            <th>taux</th>
+            <th>prog</th>
+            <th>dateclot</th>
+            <th>ndclot</th>
+            <th>nfixe</th>
+            <th>numfixe</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in items %}
+      <tr>
+            <td>{{item.nop}}</td>
+            <td>{{item.libelle}}</td>
+            <td>{{item.chap}}</td>
+            <td>{{item.gest}}</td>
+            <td>{{item.anins}}</td>
+            <td>{{item.decap}}</td>
+            <td>{{item.ndins}}</td>
+            <td>{{item.apinit}}</td>
+            <td>{{item.apact}}</td>
+            <td>{{item.sitop}}</td>
+            <td>{{item.datelanc}}</td>
+            <td>{{item.consant}}</td>
+            <td>{{item.consenc}}</td>
+            <td>{{item.pop}}</td>
+            <td>{{item.emplp}}</td>
+            <td>{{item.emplt}}</td>
+            <td>{{item.physique}}</td>
+            <td>{{item.taux}}</td>
+            <td>{{item.prog}}</td>
+            <td>{{item.dateclot}}</td>
+            <td>{{item.ndclot}}</td>
+            <td>{{item.nfixe}}</td>
+            <td>{{item.numfixe}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+        </div>
+
+{% endblock %}
